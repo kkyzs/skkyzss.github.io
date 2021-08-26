@@ -79,28 +79,28 @@ let nextSong = document.getElementById("nextSong").addEventListener("click", fun
 });
 // end of music setion -----------------------------------------------------------------------------------------------------
 
-//chatbox
-let chatBox = document.getElementById("chatBox");
-let typingBox = document.getElementById("typingBox");
+// //chatbox
+// let chatBox = document.getElementById("chatBox");
+// let typingBox = document.getElementById("typingBox");
 
-typingBox.addEventListener('keypress', function(event){
-	let myMessage; 
-		if (event.which == 13) {
-			if (playerName === undefined){
-				alert("fk u enter name la");
-				typingBox.value = "";
-			} else if (playerName !== undefined){
-				event.preventDefault();
+// typingBox.addEventListener('keypress', function(event){
+// 	let myMessage; 
+// 		if (event.which == 13) {
+// 			if (playerName === undefined){
+// 				alert("fk u enter name la");
+// 				typingBox.value = "";
+// 			} else if (playerName !== undefined){
+// 				event.preventDefault();
 			       
-			    myMessage = typingBox.value;
-			    chatBox.value += playerName + "> " + myMessage + "\n";
-			    typingBox.value = "";
+// 			    myMessage = typingBox.value;
+// 			    chatBox.value += playerName + "> " + myMessage + "\n";
+// 			    typingBox.value = "";
 		        
-		    	iosocket.send({"playerName" : playerName, "data" : myMessage, "datatype" : "chatText"});
-		    };
-	};
-});
-//end of chatbox -----------------------------------------------------------------------------------------------------
+// 		    	iosocket.send({"playerName" : playerName, "data" : myMessage, "datatype" : "chatText"});
+// 		    };
+// 	};
+// });
+// //end of chatbox -----------------------------------------------------------------------------------------------------
 
 
 let confirm = document.getElementById("confirm").addEventListener("click", function(ev){
@@ -114,7 +114,7 @@ let confirm = document.getElementById("confirm").addEventListener("click", funct
 	chooseGame.innerHTML = `<p class="message">Welcome to the arcade, ${playerName}!<br><br>Pick which game to play!</p><div class="options"><input class="btn" type="button" value="BULLET HELL" id="bullethell">
 							<input class="btn" type="button" value="PING PONG" id="pingpong"></div>`;
 
-	iosocket.send({"datatype": "username", "data": playerName});
+	// iosocket.send({"datatype": "username", "data": playerName});
 	let startBulletHell = document.getElementById("bullethell").addEventListener("click", function(ev){
 		selectSound.play();
 		bulletHell(); // if wna animate, use setTimeout() to delay this during the transition
@@ -145,22 +145,22 @@ let confirm = document.getElementById("confirm").addEventListener("click", funct
 	});
 });
 
-//server connection stuff
-let iosocket = io.connect();
+// //server connection stuff
+// let iosocket = io.connect();
 
-iosocket.on('message', function(ev){
-	if (ev.datatype === "playerCounter"){
-		playerNum = ev.data;
-	};
+// iosocket.on('message', function(ev){
+// 	if (ev.datatype === "playerCounter"){
+// 		playerNum = ev.data;
+// 	};
 
-	if (ev.datatype === "serverMessage"){
-		chatBox.value += ev.data + "\n";
-	};
+// 	if (ev.datatype === "serverMessage"){
+// 		chatBox.value += ev.data + "\n";
+// 	};
 
-	if (ev.datatype === "chatText"){
-        chatBox.value += ev.playerName + "> " + ev.data + "\n";
-    };
-});
+// 	if (ev.datatype === "chatText"){
+//         chatBox.value += ev.playerName + "> " + ev.data + "\n";
+//     };
+// });
 
 /*window.addEventListener("beforeunload", function(ev){
 	iosocket.send({'datatype': 'disconnect', 'data': playerName})
@@ -717,7 +717,7 @@ let pingPong = function(){
 
 	let isMouseDown;
 
-	iosocket.on('message', function(ev){
+	// iosocket.on('message', function(ev){
 		if (ev.datatype === "runGame"){
 			selectSound.play();
 			isMultiplayerOn = true;
@@ -848,7 +848,7 @@ let pingPong = function(){
 				startTime = Date.now();
 				gameRun = setInterval(draw, 20);
 
-				iosocket.send({"datatype": "runGame"})
+				// iosocket.send({"datatype": "runGame"})
 			});
 		} else if (isMultiplayerOn){
 			isMultiplayerOn = false;
@@ -900,7 +900,7 @@ let pingPong = function(){
 				});
 			};
 
-			iosocket.send({"datatype": "player1Pos", "data": playerPaddle.attr("y")});
+			// iosocket.send({"datatype": "player1Pos", "data": playerPaddle.attr("y")});
 
 		} else if (isMouseDown && playerNum === 2 && isMultiplayerOn){
 			aiPaddle.attr({
@@ -919,7 +919,7 @@ let pingPong = function(){
 				});
 			};
 
-			iosocket.send({"datatype": "player2Pos", "data": aiPaddle.attr("y")});
+			// iosocket.send({"datatype": "player2Pos", "data": aiPaddle.attr("y")});
 		};
 	});
 
@@ -1049,7 +1049,7 @@ let pingPong = function(){
 				gameRun = setInterval(draw, 20);
 				pingPongTracker.style.display = "none";
 
-				iosocket.send({"datatype": "nextRound"})
+				// iosocket.send({"datatype": "nextRound"})
 			});
 	    	ball.attr({'cx': dimX/2, 'cy': dimY/2});
 	    	if (aiCounter > Math.floor(noRounds)-1){ 
@@ -1066,7 +1066,7 @@ let pingPong = function(){
 					pingPongTracker.style.display = "none";
 					isMouseDown = true;
 
-					iosocket.send({"datatype": "nextRound"})
+					// iosocket.send({"datatype": "nextRound"})
 				});
 				document.getElementById("home1").addEventListener("click", function(ev){
 					selectSound.play();
@@ -1103,7 +1103,7 @@ let pingPong = function(){
 				pingPongTracker.style.display = "none";
 				isMouseDown = true;
 
-				iosocket.send({"datatype": "nextRound"})
+				// iosocket.send({"datatype": "nextRound"})
 			});
 	    	ball.attr({'cx': dimX/2, 'cy': dimY/2});
 	    	if (playerCounter > Math.floor(noRounds)-1){ 
@@ -1118,7 +1118,7 @@ let pingPong = function(){
 					pingPongTracker.style.display = "none";
 					isMouseDown = true;
 
-					iosocket.send({"datatype": "nextRound"})
+					// iosocket.send({"datatype": "nextRound"})
 				});
 				document.getElementById("home1").addEventListener("click", function(ev){
 					selectSound.play();
@@ -1169,9 +1169,9 @@ let pingPong = function(){
 				};
 			};
 
-		if (isMultiplayerOn){ //write in this condition so ball position doesn't send and clash when someone else is on the site on singleplayer
-			iosocket.send({"datatype": "ballPos", "dataX": ball.xpos, "dataY": ball.ypos});
-		};
+		// if (isMultiplayerOn){ //write in this condition so ball position doesn't send and clash when someone else is on the site on singleplayer
+		// 	iosocket.send({"datatype": "ballPos", "dataX": ball.xpos, "dataY": ball.ypos});
+		// };
 	};
 
 	setInterval(collisionDetection, 20);
@@ -1194,9 +1194,9 @@ let pingPong = function(){
 		pingPongPopup.innerHTML = `<p class="message">Single player mode!<br><br></p><div class="options"><input class="btn" type="button" value="START" id="start">`
 		footer.innerHTML = `<div id="textbox">Done already? Try something else!</div>`
 
-		if (isMultiplayerOn){
-			iosocket.send({"datatype": "disconnect"});
-		};
+		// if (isMultiplayerOn){
+		// 	iosocket.send({"datatype": "disconnect"});
+		// };
 	});
 
 };

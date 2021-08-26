@@ -777,7 +777,6 @@ let pingPong = function(){
 				footer.innerHTML = `<div id="textbox">Done already? Try something else!</div>`
 			});
 		};
-	});
 
 	let disconnectTracker = document.getElementById("multitracker");
 	let disconnetHome;

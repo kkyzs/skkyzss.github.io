@@ -1,0 +1,105 @@
+html, body {
+  height:100%;
+  width:100%;
+  background-color: #111;
+}
+
+/* Sections of Layout
+-------------------------------------- */
+/* Generic styles for demo purposes
+-------------------------------------- */
+.container {
+  font-family: Helvetica, Arial, sans-serif;
+  height:98%;
+  width:98%;
+}
+
+.container > * {
+  background-image: url(https://t4.ftcdn.net/jpg/01/14/83/77/360_F_114837789_Dx7TNprfDz2zPQyXChDDehlO6fTTSURW.jpg);
+  padding: 1em;
+  border-radius: 25px;
+
+}
+
+/* Typically, you wouldn't specify a height or min-height on this, instead allowing your actual content (i.e., text, images, etc.) to dictate the height of your content area. But since this example has very minimal content, I've set a min-height to mimic a taller content area. */
+.content {
+  min-height: 40%;
+  overflow-y: scroll;
+  scroll-behavior: smooth; /*why have i been using javascript for this all this time*/
+}
+
+/* Layout is stacked vertically by default (for narrower viewports), so give some breathing room between the sections. */
+/* Select all elements where parent is a container */
+.container > * {
+  margin-bottom: 2%;
+}
+
+/* Now let's apply grid for wider viewports. */
+@media screen and (min-width: 40em) {
+  .container > * {
+    margin-bottom: 0;
+  }
+  /* Define the grid */
+  .container {
+    display: grid;
+    grid-template-columns: 18% 60% 18%;
+    grid-gap: 2% 2%;
+    grid-template-rows: 10% auto 10%;
+  }
+  /* Place items on the grid */
+  .header {
+    grid-column: 1 / span 3;
+
+  }
+  .sidebar {
+    grid-row-end: span 2;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  /*Styling of Navigation Options*/
+  ul {
+    list-style: none;
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+  ul a {
+    text-decoration: none;
+    color: black;
+    padding-bottom: 50px;
+    transition: 0.3s;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+  }
+  ul a:hover {
+    color: #F1AC88FF;
+    text-decoration: underline;
+  }
+  .content {
+    grid-column: 2;
+    padding: 25px;
+  }
+  #aside {
+    background-image: url(https://img.freepik.com/free-vector/close-up-white-marble-textured-background_53876-58927.jpg?size=626&ext=jpg);
+    background-size: 100%;
+  }
+  /*Styling for text body*/
+  .erwinspeech {
+    font-size: 10px;
+    padding: 10px;
+    background-color: linen;
+  }
+  /*H2 Styling*/
+  .h2point {
+    background-color: #F1AC88FF;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+  }
+  .footer {
+    background: linear-gradient(to right, orange, yellow , green)
+  }

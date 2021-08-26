@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Sergio's Site</title>
+		<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+
+		<!--web fonts-->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+		<!--favicon-->
+        <link rel="icon" type="image/png" href="resources/favicon.png"/>
+
+        <!-- script for scrolling to selected div-->
+		<script type="text/javascript" src="appscripts/main.js"></script>
+
+		<script>
+			$(function() {
+			    $('a[href*=\\#]:not([href=\\#])').on('click', function() {
+			        var target = $(this.hash);
+			        target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+			        if (target.length) {
+			            $('html,body').animate({
+			                scrollTop: target.offset().top
+			            }, 1000);
+			            return false;
+			        }
+			    });
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+			<!--navigation bar-->
+			<div id="navbar">
+				<ul>
+				  <li id="title">S E R G I O K O H</li>
+				  <li class="links"><a href="#aboutme">About Me</a></li>
+				  <li class="links"><a href="#homework">Homework</a></li>
+				  <li class="links"><a href="#journal">Journal</a></li>
+				</ul>
+			</div>
+
+			<!--landing section-->
+			<div id="landing">
+				<h2 id="greeting">Hello, I'm <span class="turquoise_text">Sergio</span></h2>
+				<div id="greetingmsg">
+					<p>Year 1 Communications and New Media Undergraduate</p>
+					<!--edit this to update the homework button-->
+					<a href="http://nm2207.org:36457/" target="_blank" class="button">View Final Project</a>
+					<a href="finalentry.html" target="_blank" class="button">View Final Write Up</a>
+				</div>
+			</div>
+			<div id="landingimage">
+				<img src="resources/avatar.png" id="avatar">
+			</div>
+
+			<!--about me section-->
+			<div id="aboutmeimage">
+				<img src="resources/profile.jpg" id="profile">
+			</div>
+			<div id ="aboutme">
+				<h2 id="aboutmetitle">About <span class="turquoise_text">Me</span></h2>
+				<div id="aboutmemessage">
+					<p>Hello! I am a Year 1 Communications and New Media student, previously from Mass Communication in Ngee Ann Polytechnic. I love playing football, video games (mainly the inescapable curse that is Dota 2) and watching Anime and Korean Dramas in my free time! <s>Final season of Attack on Titan and Horimiya are the only things pulling me through this semester.</s>
+			    	<br>
+			    	<br>
+			    	I've always found coding challenging but also very fulfilling when things finally work they way I want it to. Excited for what's to come in this module! Feel free to check out my works below.
+			    	<br>
+			    	<br>
+			    	If you wish to contact me about my work or just chat, feel free to use any of the links below!</p>
+					<a href="https://t.me/skkyzss" target="_blank" class="socialbutton">Telegram</a>
+					<a href="https://www.instagram.com/yuhef2bmed/" target="_blank" class="socialbutton">Instagram</a>
+				</div>
+			</div>
+
+			<!--homework section-->
+			<div id="homework">
+				<h2 id="works">W O R K S</h2>
+				<a href ="homework01/index.html" target="_blank" class="hwlinks">H01 - Hyperlink Storytelling</a>
+				<br>
+				<br>
+				<a href ="#navbar" class="hwlinks">H02 - NM2207 Webpage</a>
+				<br>
+				<br>
+				<a href ="homework03/index.html" target="_blank" class="hwlinks">H03 - DomCom Grid Layout</a>
+				<br>
+				<br>
+				<a href ="homework04/index.html" target="_blank" class="hwlinks">H04 - Color Interactivity</a>
+				<br>
+				<br>
+				<a href ="homework05/index.html" target="_blank" class="hwlinks">CH/H05 - SVG Animation</a>
+				<br>
+				<br>
+				<a href ="homework06/index.html" target="_blank" class="hwlinks">H06 - Smile / Frown</a>
+				<br>
+				<br>
+				<a href ="homework07/index.html" target="_blank" class="hwlinks">H07 - Trippin Trails</a>
+				<br>
+				<br>
+				<a href ="homework08/index.html" target="_blank" class="hwlinks">H08 - Lists and Loops</a>
+				<br>
+				<br>
+				<a href ="http://nm2207.org:16457/" target="_blank" class="hwlinks">H09 - Game Served</a>
+				<br>
+				<br>
+				<a href ="http://nm2207.org:26457/" target="_blank" class="hwlinks">H10 - All Together</a>
+			</div>
+
+			<!--journal section-->
+			<div id="journal">
+				<h2 id="journalhead">J O U R N A L</h2>
+				<a href ="entry1.html" target="_blank" class="hwlinks">Journal Entry 1</a>
+				<br>
+				<br>
+				<a href ="entry2.html" target="_blank" class="hwlinks">Journal Entry 2</a>
+				<br>
+				<br>
+				<a href ="entry3.html" target="_blank" class="hwlinks">Journal Entry 3</a>
+				<br>
+				<br>
+				<a href ="entry4.html" target="_blank" class="hwlinks">Journal Entry 4</a>
+				<br>
+				<br>
+				<a href="#navbar" class="button">Back To Top</a>
+			</div>
+		</div>
+	</body>
+</html>

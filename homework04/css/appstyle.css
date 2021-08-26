@@ -1,0 +1,85 @@
+html, body {
+	height:100%;
+	width:100%;
+  background-color: #111;
+  background-image: url("https://i.ytimg.com/vi/w3HScdqFHCQ/maxresdefault.jpg");
+  background-size: 100% 100%;
+}
+
+
+#aside {
+  /* assign3: background image for page */
+  
+}
+
+.footer {  /* assign3: green, yellow, orange gradiant */
+  background-image: linear-gradient(to right, red, yellow);
+}
+
+.sidebar {
+    text-align: center; /* assign3: center titles*/
+}
+
+.contentpara {
+  font-size: 10px;
+}
+
+/* Sections of Layout
+-------------------------------------- */
+/* Generic styles for demo purposes
+-------------------------------------- */
+.container {
+  font-family: Helvetica, Arial, sans-serif;
+  height:98%;
+  width:98%;
+}
+
+/* Select all elements where parent is a container */
+.container > * {
+  background-color: #ccc;
+  padding: 1em;
+  margin-bottom: 2%; 
+  border-radius: 10px;  /* assign3: border radius  for rounding coursers*/
+}
+
+#headerid {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+/* Typically, you wouldn't specify a height or min-height on this, instead allowing your actual content (i.e., text, images, etc.) to dictate the height of your content area. But since this example has very minimal content, I've set a min-height to mimic a taller content area. */
+.content {
+  min-height: 40%;
+  overflow-y: scroll;
+}
+
+
+/* Now let's apply grid for just for wider viewports. */
+@media screen and (min-width: 40em) {
+  .container > * {
+    margin-bottom: 0;
+  }
+  /* Define the grid */
+  .container {
+    display: grid;
+    grid-template-columns: 18% 60% 18%;
+    grid-gap: 2% 2%;
+    grid-template-rows: 10% auto 10%;
+  }
+  /* Place items on the grid */
+  .header {
+    grid-column: 1 / span 3;
+
+  }
+  .sidebar {
+    grid-row-end: span 2;
+  }
+  .content {
+    grid-column: 2;
+  }
+
+}
+
+.labels {
+  font-size: 20px
+}

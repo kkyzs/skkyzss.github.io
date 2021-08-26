@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Final Write Up</title>
+		<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+
+		<!--web fonts-->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+		<!--favicon-->
+        <link rel="icon" type="image/png" href="resources/favicon.png"/>
+	</head>
+
+	<body>
+		<div id="container">
+			<!--navigation bar-->
+			<div id="journaltitle">
+				<ul>
+				  <li id="entrytitle">FINAL WRITE UP</li>
+				</ul>
+			</div>
+
+		<!--landing section-->
+		<div id="finalmain" class="journalmain">
+			<p>
+				The final product of my game is a retro arcade with two separate games, a bullet hell survival and a ping pong game. Initially I wanted to have three separate games with interactive story elements as well, but due to time constraints, I had to manage expectations and instead focus on pushing the two games I had to the next level to showcase what I had learnt throughout this module, whether it be tutorial material or self-taught.
+			</p>
+			<p>
+				The first game I worked on was the bullet hell survival, and this already posed a challenge early on. Since I was creating the Raphael elements in a function periodically and storing them in an array, it only worked within the function scope and not outside of it in a collision function. This took a long-time troubleshooting. When analyzing the 'circleBump' code I ripped from tutorial, I realized that it was reassigning variables that might have posed an issue. After a lot of trial and error, I tried renaming those values, and change the code such that it got the elements from an array, resolving the issue.
+			</p>
+			<p>
+				A similar issue happened with the ping pong game. Once again, taking the collision code, this time I had to register collisions between a rectangle and circle, which was more complicated since Raphael rectangles don't have set 'cx' and 'cy' values like in circles. I had to flex my brain muscles a bit to figure out the math behind this one but managed to resolve it pretty easily once I properly understodd how the collision and distance codes worked.
+			</p>
+			<p>
+				In addition to class material, this project also led me to explore other things like Javascript Modules and requestAnimationFrame(). Since my game was initially built in two separate Javascript files, I wanted to keep it that way in the final product, making things a bit neater. Thus, I came across Modules and after looking through <a href="https://www.youtube.com/watch?v=cRHQNNcYf6s&t=1s">this video</a> and a few other websites, I managed to implement it easily into my code. However, since I wanted each game to run separately on an event listener, it kept returning undefined. So, I decided to simply wrap both games in a function in a single Javascript file and move on, focusing on styling and debugging which were more important aspects.
+			</p>
+			<p>
+				When I tried to build on the foundation of my games, like implementing an endless survival game mode for the first game, I started to realize limitations in my project. After running for a while, my setInterval functions would start running extremely slowly, not at the interval it was specified. After doing a bit of research, I came to understand this as 'layout thrashing', where too many instances of setIntervals would crash the browser eventiually. I tried many things, like implementing <a href="http://www.javascriptkit.com/javatutors/requestanimationframe.shtml">requestAnimationFrame()</a> instead. While this delivered smooth animations as promised, it came with its own issues, like cancelAnimationFrame() not running properly, and it didn't fix the underlying issue either, so I decided not to go ahead with using this. Unfortunately, this was not an issue I could solve, since it was not much of an error on my part but rather the limitations of the browser. As the deadline drew closer I also learnt of 'multithreading' during the troubleshooting process, but due to time limitations, I wasn't able to figure it out.
+			</p>
+			<p>
+				As for styling and design, I really wanted to sell the arcade look of the project, and browser alert boxes were not the way to go. I decided to create individual divs in my HTML file and style them accordingly, using 'display' to manipulate when it would appear/disappear on certain conditions in the game. Initially, I created each box for each use individually, but later found out I could manipulate the innerHTML to change the contents, and simply had to reassign the event listeners on the buttons. But this meant I had to reassign the buttons every time the innerHTML was changed, so my initial intention of keeping my HTML code concise actually led my Javascript file to be even longer than it needed to be. I decided to find a balance between the two, only using the innerHTML method when I had to reassign one button, so things don't get too long-winded.
+			<p>
+				I decided to push myself by implementing multiplayer functionality too. I initially struggled with assigning control to separate paddles for the pong game but managed to do so using multiple conditionals. The issue, however, is that my code would only work if each client connected one by one, as upon refreshing, with the nature of my code, it would assign both players to the same paddle. I tried <a href="https://imgur.com/a/gHqQF96.png">using arrays</a> to resolve this issue but have only come so far and the deadline is near. Fortunately, the game runs without other issues, at least that's what I thought. Upon uploading my game to the server, there sometimes would be lag issues that causes the ball to jump about. After inspecting my code, I believe this to be more an issue of a delay between the client sending and receiving the info, rather than a problem with the code. This turned out to be another limitation I should've considered earlier on in this assignment.
+			</p>
+			<p>
+				Overall, I managed to resolve most of the issues I encountered when coding the final project, but due to the limitations of time, there remain issues that are left unresolved. I'd like to think that with more time and proper planning, I'd at least have fixed the assignment of players issue, but alas. Apart from that, I'd like to have been able to make my code more efficient as well, as I understand that implementing arrays for things like music would likely have made my code more concise, but I decided to instead focus on the more important things instead, leaving my code in the long-winded but more importantly, still functioning state that it's in (sorry Brandon!). All in all, this was a fun project and I really enjoyed pushing myself to work on it until the very end. Hats off to all the video game designers out there. 
+			</p>
+			<p>
+				Credits:<br>
+				<a href="https://www.youtube.com/channel/UCsej4tgCoXDgVH3J7M3NMgw">Musikage</a> – 8bit JoJo BGM.<br>
+				<a href="https://freesound.org/">Freesound.org</a> & Royalty Free YouTube Sounds – Sound Effects<br>
+				<a href="https://wallpaperaccess.com/">Wallpaperaccess.com</a> - Images<br>
+				Random strangers on Stackoverflow & Reddit.
+
+			</p>
+		</div>
+	</body>
+</html>

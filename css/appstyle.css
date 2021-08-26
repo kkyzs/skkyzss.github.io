@@ -1,0 +1,322 @@
+html {
+	width: 100%;
+
+}
+
+body {
+	height:100%;
+  	width:100%;
+  	padding:0;
+  	margin:0;
+}
+
+.turquoise_text {
+	color: #00BEBB;
+}
+
+/*navbar css*/
+#navbar {
+	width: 100%;
+}
+
+#title {
+	color: #00BEBB;
+	font-size: 30px;
+	font-weight: 700;
+	display: block;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+  	font-family: 'Raleway', sans-serif;
+  	margin: 25px 50px 25px 0px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	margin-left: 130px;
+}
+
+li {
+	float: left;
+}
+
+li a {
+ 	display: block;
+	color: black;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+  	font-family: 'Raleway', sans-serif;
+  	font-weight: 500;
+  	margin: 23px 50px 23px 0px;
+  	transition: 0.3s;
+}
+
+li a:hover {
+	text-decoration: underline;
+	color: #00BEBB;
+}
+
+/*to align the rest of the links with the title link that has larger font size*/
+.links {
+	padding: 10px 0px 10px 0px;
+}
+
+/*landing div css*/
+#landing {
+	width: 70%;
+	height: 500px;
+	float: left;
+}
+
+#greeting {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	font-size: 48px;
+	padding: 70px 0px 0px 150px;
+}
+
+#greetingmsg {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+	font-size: 24px;
+	padding: 0px 0px 0px 150px;
+	margin-top: -25px;
+	color: #171717;
+}
+
+.button {
+	background-color: #69BEBB;
+	border-radius: 5px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 50px;
+	transition: 0.3s;
+}
+
+.button:hover {
+	background-color: #00BEBB;
+}
+
+#landingimage {
+	width: 30%;
+	height: 500px;
+	float: left;
+}
+
+
+#avatar {
+	max-width: 50%
+}
+
+/*about me css*/
+#aboutmeimage {
+	width: 20%;
+	height: 460px;
+	float: left;
+	background-color: #FFFAF1;
+	padding: 100px 0px 0px 10%;
+}
+
+#profile {
+	max-width: 100%;
+}
+
+#aboutme {
+	width: 70%;
+	height: 560px;
+	float: left;
+	background-color: #FFFAF1;
+}
+
+#aboutmetitle {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	font-size: 48px;
+	padding: 50px 0px 0px 100px;
+}
+
+#aboutmemessage {
+	padding: 0px 0px 0px 100px;
+	margin-top: -20px;
+	width: 75%;
+	font-size: 16px;
+	font-family: arial;
+	line-height: 1.5;
+}
+
+/*seperate css for different margins in this section*/
+.socialbutton {
+	background-color: #69BEBB;
+	border-radius: 5px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	margin: 10px 30px 0px 0px;
+	transition: 0.3s;
+}
+
+.socialbutton:hover {
+	background-color: #00BEBB;
+}
+
+
+/*homework css*/
+#homework {
+	width: 100%;
+	height: 650px; /*adjust the height as we go along and there's more work (+50 each time)*/
+	clear: both;
+	text-align: center;
+	padding-top: 50px;
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+}
+
+#works {
+	font-weight: 700;
+	font-size: 48px;
+	color: #00BEBB;
+}
+
+.hwlinks {
+	text-decoration: none;
+	color: #171717;
+	transition: 0.3s;
+}
+
+.hwlinks:hover {
+	text-decoration: underline;
+	color: #00BEBB;
+}
+
+.button {
+	background-color: #69BEBB;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 50px;
+	transition: 0.3s;
+}
+
+/*journal css*/
+/*homework css*/
+#journal {
+	width: 100%;
+	height: 450px;
+	clear: both;
+	text-align: center;
+	padding-top: 50px;
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #FFFAF1;
+}
+
+#journalhead {
+	font-weight: 700;
+	font-size: 48px;
+	color: #00BEBB;
+}
+
+/*JOURNAL ENTRY SECTION*/
+#journaltitle {
+	width: 100%;
+	background-color: #00BEBB;
+}
+
+#entrytitle {
+	color: #FFF;
+	font-size: 30px;
+	font-weight: 700;
+	display: block;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+  	font-family: 'Raleway', sans-serif;
+  	margin: 25px 50px 25px 0px;
+}
+
+#journalmain1 {
+	width: 1040px;
+	height: 1000px; /*adjust the height as we go along and there's more work (+50 each time)*/
+	clear: both;
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 50px;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #FFFAF1;
+}
+
+#journalmain2 {
+	width: 1040px;
+	height: 1250px; /*adjust the height as we go along and there's more work (+50 each time)*/
+	clear: both;
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 50px;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #FFFAF1;
+}
+
+#journalmain3 {
+	width: 1040px;
+	height: 1250px; /*adjust the height as we go along and there's more work (+50 each time)*/
+	clear: both;
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 50px;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #FFFAF1;
+}
+
+#journalmain4 {
+	width: 1040px;
+	height: 1150px; /*adjust the height as we go along and there's more work (+50 each time)*/
+	clear: both;
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 50px;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #FFFAF1;
+}
+
+#finalmain {
+	width: 1040px;
+	height: 1700px; /*adjust the height as we go along and there's more work (+50 each time)*/
+	clear: both;
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 50px;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #FFFAF1;
+}
+
+.journalmain p {
+	line-height: 30px;
+}
+
+.journalmain p a {
+	color: red;
+	font-weight: bold;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "ChatnDraw",
+  "version": "0.0.0",
+  "description": "multiuser serving",
+  "main": "multiServerExpress.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lonce",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "socket.io": "^1.3.7"
+  },
+  "private": true
+}

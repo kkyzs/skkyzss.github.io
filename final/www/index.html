@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+        <!--  Include the raphael library from the jslibs directory  -->
+        <script type="text/javascript" src="jslibs/raphael.js"></script>
+        <script defer type="text/javascript" src="appscripts/main.js"> </script>
+        <script src="/socket.io/socket.io.js"></script>
+        <title>Final Project</title>
+
+        <!--fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+        <!--favicon-->
+        <link rel="icon" type="image/png" href="resources/favicon.png"/>
+    </head>
+
+  <body>
+    
+    <div class="container">
+      <header class="header">
+        <p>JOJO'S BIZARRE ARCADE</p>
+      </header>
+
+      <nav class="sidebar">
+        <div id="leftsidebar">
+          <h3>Welcome!</h3>
+          <br>
+          <input class="btn" type="button" value="HOME" id="home">
+          <br>
+          <label for="musicSlider">Music Volume</label>
+          <input type="range" class="slider" id="musicSlider" min="0" max="1" step="0.01">
+          <br>
+          <input class="btn" type="button" value="Previous Song" id="prevSong">
+          <br>
+          <input class="btn" type="button" value="Next Song" id="nextSong">
+          <br>
+          <h3>Chatbox</h3>
+          <textarea id="chatBox" rows="16" cols="16"></textarea>
+          <br>
+          <textarea id="typingBox" rows="2" cols="16" placeholder="Enter Message Here"></textarea>
+        </div>
+      </nav>
+
+      <article class="content" id="centerDiv">
+        <div class="popup" id="playerid">
+          <p class="message">Welcome to the Arcade!<br><br>Please enter your name below.</p>
+          <input type="textarea" id="namebox" placeholder="Name Here">
+          <br>
+          <input class="btn" type="button" value="CONFIRM" id="confirm">
+        </div>
+
+        <div class="popup" id="gameselect">
+          <p class="message">Pick which game to play!</p>
+          <div class="options">
+            <input class="btn" type="button" value="BULLET HELL" id="bullethell">
+            <input class="btn" type="button" value="PING PONG" id="pingpong">
+          </div>
+        </div>
+
+        <div class="popup" id="bullethellstartC">
+          <p class="message">Classic Mode!<br><br>Outmaneuver enemy fire to escape this bullet hell!</p>
+          <div class="options">
+            <input class="btn" type="button" value="START" id="BHstartC">
+          </div>
+        </div>
+
+        <div class="popup" id="bullethellstartE">
+          <p class="message">Endless Mode!<br><br>Outmaneuver enemy fire to escape this bullet hell!</p>
+          <div class="options">
+            <input class="btn" type="button" value="START" id="BHstartE">
+          </div>
+        </div>
+
+        <div class="popup" id="deathbox">
+          <p class="message">You died!<br><br>Try again?</p>
+          <div class="options">
+            <input class="btn" type="button" value="Yes" id="yes1">
+            <input class="btn" type="button" value="No" id="no1">
+          </div>
+        </div>
+
+        <div class="popup" id="victorybox">
+          <p class="message">Congratulations! You made it!<br><br>Play again?</p>
+          <div class="options">
+            <input class="btn" type="button" value="Yes" id="yes2">
+            <input class="btn" type="button" value="No" id="no2">
+          </div>
+        </div>
+
+        <div class="popup" id="pingpongstart">
+          <p class="message">Single player mode!</p>
+          <br>
+          <div class="options">
+            <input class="btn" type="button" value="START" id="start">
+          </div>
+        </div>
+
+        <div class="popup" id="pingpongtracker">
+          <p class="message">Point for AI!<br><br>Game will resume immediately after pressing 'OK'!</p>
+          <div class="options">
+            <input class="btn" type="button" value="OK" id="ok">
+          </div>
+        </div>
+
+        <div class="popup" id="multitracker">
+          <p class="message">Your partner disconnected!</p>
+          <div class="options">
+            <input class="btn" type="button" value="HOME" id="returnHome">
+          </div>
+        </div>
+      </article>
+
+      <!-- Ditto the previous note about <aside>. -->
+      <aside class="sidebar">
+        <div id="rightsidebar">
+          <h3>Settings</h3>
+          <br>
+          <input class="btn" type="button" value="Endless Mode" id="endless">
+          <div id="bullethellSettings">
+            <br>
+            <label for="spawnRate">Spawn Rate</label>
+            <input type="range" class="slider" id="spawnRate" min="50" max="200" step="1" value="125">
+            <p id="spawnRateInfo">Spawn Rate is now: 10</p>
+            <br>
+            <label for="gameDuration">Game Duration</label>
+            <input type="range" class="slider" id="gameDuration" min="15" max="60" step="1" value="30">
+            <p id="gameDurationInfo">Game Duration is now: 30s</p>
+          </div>
+          <br>
+          <input class="btn" type="button" value="Multiplayer" id="multiplayer">
+          <div id="pongSettings">
+            <br>
+            <br>
+            <label for="gameRounds">No. of Rounds</label>
+            <input type="range" class="slider" id="gameRounds" min="3" max="10" step="0.1" value="5">
+            <p id="gameRoundsInfo">5 Points to Win!</p>
+          </div>
+        </div>
+      </aside>
+
+      <footer class="footer" id="footer">
+        <div id="textbox">
+          Welcome to the arcade! Test your reflexes and make your way through space(?) through a bullet hell, or have a 'friendly' game of Ping Pong against a faultless AI! <br><br> <b>Choose a game to get started!</b>
+        </div>
+      </footer>
+    </div>
+  
+
+  </body>
+</html>
+

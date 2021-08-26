@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Journal Entry 4</title>
+		<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+
+		<!--web fonts-->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+		<!--favicon-->
+        <link rel="icon" type="image/png" href="resources/favicon.png"/>
+	</head>
+
+	<body>
+		<div id="container">
+			<!--navigation bar-->
+			<div id="journaltitle">
+				<ul>
+				  <li id="entrytitle">E N T R Y 4</li>
+				</ul>
+			</div>
+
+		<!--landing section-->
+		<div id="journalmain4" class="journalmain">
+			<p>
+				As the core of my game was already pretty much completed by last week, I spent most of this week debugging, turns out, even though the game's spine is complete, the more I try to beef up my game, the more issues arise.
+			</p>
+			<p>
+				The first and rather minor issue was one regarding my pop-up boxes. As I decided to style divs to replace the regular browser alert boxes like mentioned in last week's diary entry, this came with a lot more issues than expected. What I thought was the more efficient and "cleaner" way of doing it was to just create one div, and manipulate the ".innerHTML" and reassign the event listeners. However, this meant that it's essentially overwriting the previous event listener, making a bunch of errors pop up when swapping between different game modes. For example, if I were to start the bullet hell game, switch to survival mode and go back to home, the "Start Game" button would no longer work because the code could not detect the event listener of "null", as it's been reassigned. Well, guess this just means my code will remain as long winded as it is.
+			</p>
+			<p>
+				The next problem occured when I was trying to beef up my game. Taking my TA's idea, I decided to add a <a href="https://imgur.com/RKaFduR">"shooter"</a> aspect to my bullet hell game, along with other collectibles like One-Ups. However, with the nature of my game being <a href="https://imgur.com/um6ScYs.png">essentially run on multiple setIntervals at incredibly high frequencies</a>, it didn't take much to "crash" it - it still runs, just at every second or so, and sometimes it'd automatically start itself back up. This was the biggest challenge I've faced so far, mainly because there wasn't any actual error on my part, the console wasn't reflecting any errors, but was more an issue of optimization. It took me hours of troubleshooting different aspects to try and figure out the problem - I tried manipulating the frequency of intervals, various more efficient methods of "Arrays.shift()" to remove elements from the page, but the issue still persisted.
+			</p>
+			<p>
+				After consulting my TA and doing a bit more research, I came to understand this problem as "layout thrashing", where too many uses of setIntervals and setTimeouts to change the user's screen essentially crashes the browser. From there, I found out about <a href="http://www.javascriptkit.com/javatutors/requestanimationframe.shtml">requestAnimationFrame()</a>, where it's essentially the preferred method for browser animations. However, even after replacing all my setIntervals, while the movement of objects were smoother, the main issue remained. In addition, it was more complicated manipulating the frequency of my functions and I also had an issue with cancelAnimationFrame(), so I decided to just go back to using setIntervals. Two hours down the drain and back to square one.
+			</p>
+			<p>
+				Now this is where I'd like to say I found a solution, but unfortunately, it looks like I have to take the "L" this time and move on. Since the issue usually occured after a minute of playing the game, what I've done is essentially reduce the number of One-Ups, the shoot rate, and increased the earlier spawn rate of enemies, so hopefully I can make the player lose before they encounter the issue. Either I really suck or this game is actually pretty difficult. A kind soul on stackoverflow also introduced me to multithreading in a browser, so I'll be reading up on that in the upcoming week, hopefully it'll resolve the issue. 
+			</p>
+			<p>
+				As for the server stuff for the Ping Pong game, I managed to set up and pass the variable to my client. I was stuck on this for so long because my dumbass forgot I had to "rehost" the server everytime a change was made to the server code. So while I had my code working three days ago, I only found out today. I also managed to use these variables to properly tell the browser <a href="https://i.imgur.com/Q1CdPyK.png">which paddle to control using many, many if statements</a>. Now comes the tough bit though, as I actually have to write the code for sending "live" information between clients. Haven't put much thought into how I'm going to do this but hopefully I'll get it done in the upcoming week.
+			<p>
+				Apart from the two things that need to be done: multiplayer capability for Ping Pong and a potential fix for the setInterval issue, I'm glad to say I'm pretty much done with the assignment! Since I still have a bit of time though, I'd like to push myself to hopefully achieve these two tasks.
+			</p>
+		</div>
+	</body>
+</html>

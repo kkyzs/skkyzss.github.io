@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Journal Entry 1</title>
+		<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+
+		<!--web fonts-->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+		<!--favicon-->
+        <link rel="icon" type="image/png" href="resources/favicon.png"/>
+	</head>
+
+	<body>
+		<div id="container">
+			<!--navigation bar-->
+			<div id="journaltitle">
+				<ul>
+				  <li id="entrytitle">E N T R Y 1</li>
+				</ul>
+			</div>
+
+		<!--landing section-->
+		<div id="journalmain1" class="journalmain">
+			<p>
+				For my final project, I have thought of an interactive story with mini game elements incorporated into it. The main inspiration I had was Scott Pilgrim, so similarly, I'll likely have a lot of retro arcade elements in my game. I will be coding three separate arcade games: Bullet Hell Survival, Ping Pong, and a Shooter - all of which I believe will be able to demonstrate what I've learned in this module thus far.
+			</p>
+			<p>
+				I realise that this project is extremely ambitious, with quite a lot to do, but luckily I'm more excited than afraid. I believe with my abilities I will be able to complete this, but it's only a matter of time. Luckily, in order to manage expectations, the storyline can take a backseat to the minigames I have in mind, and if that happens I can turn my final project into an "arcade" in a sense.
+			</p>
+			<p>
+				I have started coding the first Bullet Hell game over the past week, and things were going well but of course, with coding, there can never be no issues. I encountered my first obstacle when I declared a function that would create 'bullets', the Raphael objects, when run. Unfortunately, because it's initialized only within the function scope, it would not work outside the scope itself. Even more unfortunately, returning the variable or declaring a global scope did not resolve the issue. It was frustrating because for hours, I knew what the issue was but with no solution to resolve it.
+			</p>
+			<p>
+				After hours of troubleshooting but with no solution in sight, I decided to take a break, and return with a clearer mind. After consulting with a friend, who suggested that storing the created Raphael objects in an array could resolve the issue, I got to coding again. It was a bit complicated since I only just learned of arrays the week before, but with the help of stackoverflow, reddit, and my friend who spent hours troubleshooting with me, it finally seemed like we were getting somewhere. Console messages were logging properly, and the developer tools showed objects being created within the array as I wanted them to, but then came another issue. In the 'circleBump' code I ripped from an earlier tutorial, despite passing in the bulletArray that was working as intended, it returned an error yet again, this time stating that ".attr()" was not a function, when I was trying to retrieve the 'r' value of the object. 
+			</p>
+			<p>
+				Upon analyzing my code further, I started to raise questions regarding the 'circleBump' code I simply ripped and pasted. Why did 'a' and 'b' arguments have to create separate attributes to hold the coordinates of the circles passed into the function? In fact, it looks like the code is reassigning attributes to the variable (and in the process removing the 'r' attribute, returning an error). So, I decided to tweak the code and write one from scratch for myself.
+			</p>
+			<p>
+				Fortunately, it seemed like reassigning different variables (replacing 'a' and 'b' with 'playerCoords' and 'buletCoords' respectively) managed to solve the issue, and finally, the spine of the  game is completed. I then moved on to styling the objects a bit, and introduce timers and conditionals to determine when the player wins, loses, or even create an invulnerable window after being hit, along with seperate difficulty settings. While there were minor errors here and there, none were as bad as what I encountered before and were easily resolved.
+			</p>
+			<p>
+				So what's next? Styling is going to take a long time with what I have in mind, so I'm thinking of leaving that til the end. For now, I think I'll move on the code the next game, which in theory should be much easier than what I've done so far, so... fingers crossed?
+			</p>
+		</div>
+	</body>
+</html>

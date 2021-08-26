@@ -1,0 +1,104 @@
+html {
+	width: 100%;
+	text-align: center;
+}
+
+/*background color styling*/
+#index {
+	background-color: beige;
+}
+
+#ending1 {
+	background-color: azure;
+}
+
+#ending2 {
+	background-color: lavenderblush;
+}
+
+h2 {
+	text-align: center;
+	font-family: 'Amatic SC', cursive;
+	font-size: 60px;
+}
+
+/*adding padding so the header image doesn't hug the edge of the window*/
+
+#header {
+	text-align: center;
+	padding-top: 30px;
+}
+
+#headerimg {
+	height: 150px;
+}
+
+/*image wrapper to center the image on the page*/
+
+#image {
+	width: 90%;
+	margin: auto;
+}
+
+img {
+	max-width: 100%;
+}
+
+/*text styling*/
+
+.text {
+	font-family: arial;
+	text-align: center;
+  	margin: 0px 100px 0px 100px;
+  	line-height: 1.5;
+}
+
+/*quotation box styling*/
+
+.quote {
+	text-align: center;
+	border: 5px double salmon;
+ 	width: 90%;
+ 	margin: 0% 5% 0% 5%;
+ 	padding: 10px;
+ 	justify-content: center;
+ 	background-color: linen;
+ 	color: #EE4E34;
+}
+
+.quote p {
+	font-size: 30px;
+	font-family: 'Caveat', cursive;
+}
+
+/*style for options*/
+
+#options a {
+	text-decoration: none;
+	margin: 10px 20px 10px 20px;
+}
+
+.button {
+	width: 400px;
+	outline: 3px solid salmon;
+	background-color: linen;
+	font-size: 24px;
+	transition: 0.3s;
+	display: inline-block;
+	color: #4A4A4A;
+}
+
+.button p {
+	font-family: arial;
+}
+
+.button:hover {
+	background-color: salmon;
+	color: white;
+}
+
+/*footer style*/
+
+#footer {
+	height: 30px;
+}

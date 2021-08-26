@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <link rel="shortcut icon" href="">
+        <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+        <script src="/socket.io/socket.io.js"></script>
+        <!--  Include the raphael library from the jslibs directory  -->
+        <script type="text/javascript" src="jslibs/raphael.js"></script>
+        <!--  Use the require.js module loader, and tell it where our main JavaScript file is  -->
+        <script defer type="text/javascript" src="appscripts/main.js"> </script>
+        <link rel="icon" type="image/png" href="resources/favicon.png"/>
+        <title>All Together</title>
+    </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        All together, now!
+      </header>
+
+      <nav class="sidebar">
+        <div>
+          Chatbox:
+          <br>
+          <textarea id="chatBox" rows="16" cols="16"></textarea>
+        </div>
+        <br>
+        <div>
+          Type:
+          <br>
+          <textarea id="typingBox" rows="2" cols="16"></textarea>
+        </div>
+      </nav>
+
+      <article class="content" id="centerDiv" id="svgcanvasDiv">
+        <div id="svgcanvasDiv"> 
+            <div id="svgcanvas"> </div>  <!--  <article>   article  </article> -->
+        </div>
+      </article>
+
+      <!-- Ditto the previous note about <aside>. -->
+      <aside class="sidebar">
+        Controls<br>
+        <input type="button" name="clear" id="clear" value="Clear Canvas">
+        <br>
+        <br>
+        <label for="Hue">Hue</label>
+        <br>
+        <input type="range" id="hue" min="0" max="1" step="0.05">
+        <br>
+        <label for="Saturation">Saturation</label>
+        <br>
+        <input type="range" id="saturation" min="0" max="1" step="0.05">
+        <br>
+        <label for="Lightness">Lightness</label>
+        <br>
+        <input type="range" id="lightness" min="0" max="1" step="0.05">
+        <br>
+        <label for="stroke">Stroke Width</label>
+        <br>
+        <input type="range" id="stroke" min="1" max="5" step="1">
+      </aside>
+
+      <footer class="footer" id="myFooter">
+
+      </footer>
+
+    </div>
+</html>
+
+
+

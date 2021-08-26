@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Journal Entry 2</title>
+		<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+
+		<!--web fonts-->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+		<!--favicon-->
+        <link rel="icon" type="image/png" href="resources/favicon.png"/>
+	</head>
+
+	<body>
+		<div id="container">
+			<!--navigation bar-->
+			<div id="journaltitle">
+				<ul>
+				  <li id="entrytitle">E N T R Y 2</li>
+				</ul>
+			</div>
+
+		<!--landing section-->
+		<div id="journalmain2" class="journalmain">
+			<p>
+				Over the last week, I already started coding on my second "ping pong" game, and haven't edited the first bullet hell one since it was almost completed. Though per TA Brandon's suggestion, I think once I've completed this second game, I'll start on beefing each game up, and style them properly. If there is time once I'm done with all these, then I'll start on the last game. It's also becoming increasingly likely that the final product will essentially work as a "arcade machine" with multiple games, as I feel that this has more potential to showcase my newly learnt knowledge on Javascript, rather than working with mostly HTML and CSS elements to create a story, as I originally had in mind.
+			</p>
+			<p>
+				Just a quick update on the first bullet hell game, the way the game currently works is similar to a survival game, where you have to survive for 30seconds on any given difficulty. In order to add to this game, I'm considering adding an endless mode, with a scoreboard that tracks the player's time after each run. This will likely come with increasing difficulty (more bullets at faster rates as the player progresses), and possibly collectibles that will increase the player's lives along the way.
+			</p>
+			<p>
+				Regarding the second game, I've created a ping pong style game, where the player simply has to move the paddle and essentially play against an AI. I'm currently stuck with how I should equate the movement of the AI paddle. I've essentially equated the "y" value of the paddle to equal the "cy" value of the ball, so it is essentially faultless. I know because I actually played for 10minutes and never won a single round while testing different variations of the equation. A friend suggested that I use the random function to make it such that it's predetermined when the AI will make a mistake. This works but is not exactly what I wanted, since the the difference in movement is very obvious. My next idea is to essentially use a random number generator, so it adds a random value to the paddle's "y" value each time, giving variation to where the ball contacts the paddle, and when the generated number is high enough, the AI essentially makes a mistake and misses the ball. I've yet to try it out but in theory, this should work! I hope...?
+			</p>
+			<p>
+				While I was coding this game, the main issue I initially had (that's now resolved), was measuring the collision between a Raphael circle and rectangle. I thought it'd be easy since we did collisions between two circles in class, but I was so wrong. This was because the circle object already used "cx" and "cy", the coordinates in the middle of the object that made calculating the overlap easy, but rectangles didn't have the same thing. It's simple math really, but for some reason I struggled. After testing out multiple equations over a few days of ragequitting, I finally got the <a href="https://i.imgur.com/PyGpQZs.png" target="_blank">proper equation</a> to work. Though currently, sometimes there seems to be an error with the overlap, and the ball essentially gets "stuck" within the paddle's borders, until it bounces out again. This is a rare occurence but I'd like to fix it eventually, though it's probably not a huge issue now. I really never thought I'd have to do so much math in coding.
+			</p>
+			<p>
+				Another issue I encountered was how I was going to increase the difficulty of the game as it progressed. I initially simply added a value to the x and y rates, but didn't work, as the values would swap between positive and negative with each hit, making it essentially a loop between two numbers, but not adding any to them. I considered using various Math() functions to resolve the issue, but none seemed to work either. I eventually settled on using <a href="https://i.imgur.com/pb7Zi41.png" target="_blank">multiplication</a> instead, since this increases the values exponentially without having the sign be an issue. It wasn't what I planned, but turned out to be an effective way to resolve the issue.
+			</p>
+			<p>
+				At this point, apart from making the AI imperfect, I'm left with few edits to complete my second game. Though if time permits, I'd like to try my hand at using servers to make this a multiplayer game, but I foresee a lot of self-learning for this one. So from here, I think I'll take my TA's recommendation and proceed to do the styling of my game, and finally make it look decent and adding sounds and music to give the full "arcade experience". When doing this, I foresee having trouble replacing Raphael objects with images, would the entire could still work the same way? Guess I'll have to get coding to figure it out. Alternatively, I could try my hand at making more complex objects with Raphael objects to get the look I want, this at least in theory shouldn't mess with the rest of the code.
+			</p>
+			<p>
+				Also, I've decided to explore Javascript Modulars, so I can run different Javascript files on a single page. This helps keep my code more organised and reduces the number of new names I have to give to my variables. Hopefully this shouldn't pose too much of a problem.
+			</p>
+		</div>
+	</body>
+</html>

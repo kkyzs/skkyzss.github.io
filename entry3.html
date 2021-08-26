@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Journal Entry 3</title>
+		<link rel="stylesheet" type="text/css" href="css/appstyle.css">
+
+		<!--web fonts-->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+		<!--favicon-->
+        <link rel="icon" type="image/png" href="resources/favicon.png"/>
+	</head>
+
+	<body>
+		<div id="container">
+			<!--navigation bar-->
+			<div id="journaltitle">
+				<ul>
+				  <li id="entrytitle">E N T R Y 3</li>
+				</ul>
+			</div>
+
+		<!--landing section-->
+		<div id="journalmain3" class="journalmain">
+			<p>
+				Like I mentioned in my previous diary entry, I started this week trying out Javascript Modulars. I initially got it to work, but when trying to create buttons and other HTML elements to run the games or control certain things within the game, I frequently got undefined errors. I think if given more time I'd definitely be able to figure out a solution, but for now, I've decided to just put everything in a single code, and focus on styling and debugging first.
+			</p>
+			<p>
+				I've started on styling my game and I'm glad that everything is working with no issues, <a href="https://i.imgur.com/ZSfDvMf.png" target="_blank">here's a preview</a> though nothing is really finalised for now. I'm just glad that the CSS 'animation' I created and linking of outsourced images are working fine, and I just have to replace them if I find more suitable images. 
+			</p>
+			<p>
+				One issue I encountered during styling was trying to make alert pop-up boxes my visually pleasing, unfortunately, the regular "alert()" commands are not going to work in this case. Instead, I created divs and styled them accordingly, and by using "display: block" and "display: none", I was able to toggle between showing and hiding them properly. Initially, when I first did this, I created multiple divs that essentially did the same thing but for separate text, such as <a href="https://i.imgur.com/0NUQqBg.png" target="_blank">victory box and death box</a>, and manipulated them accordingly in <a href="https://imgur.com/Rv1y3VD.png" target="_blank">Javascript as such</a>. I created multiple divs in the HTMl because I initially didn't know how to change the onClick functions of the buttons when manipulated using ".innerHTML", but when coding the same pop-up boxes for the second game, I realised all I had to do was reassign the event listeners accordingly. While both methods work, the second is more compact and cleaner, so if there's extra time, I'll make the necessary changes.
+			</p>
+			<p>
+				Regarding the randomising of errors for the AI paddle, while my initial plan in the previous diary entry did work, because the random value added to the "y" value was being generated every 20ms (due to the setInterval() of the code), it essentially looked like the AI was having a seizure. So essentially, what I decided to do was to create a random number, which I did, but not every 20ms. So I decided to do it when the <a href="https://i.imgur.com/xx9HdlX.png" target="_blank">ball contacted the player's paddle, storing that number into a variable</a> and adding it to the "y" value of the AI. Thankfully, this works! While it does mean that AI does "jump" a bit when the ball contacts the player's paddle, it's not a huge issue in my opinion.
+			</p>
+			<p>
+				Currently, what I'm working on is replacing the Raphael circles with images instead. I decided to use the "fill" attribute since this means it doesn't disrupt the collision functions that I wrote earlier. I've tested it and it works. But I want to introduce variation, and have decided to store multiple images in an array, unfortunately, when trying to fill the circles with a randomised image from the array, an error occurs. I've logged the array and it seems that the images are being stored properly, so the issue is probably occuring when I'm trying to use the "fill" attribute with an array variable instead of a url like it's intended.
+			</p>
+			<p>
+				Apart from this, regarding the bullet hell survival mode, I managed to write the necessary code such that the game runs is "endless", increasing difficulty over time. Though, I was having difficulty introducing "1 Ups" for the player. In theory, it should work exactly like the current collision code I have, all I have to do is increase the counter instead of decreasing it, so it's likely a small error on my end.
+			<p>
+				Apart from what's already mentioned above, I have to work on creating a scoreboard that tracks the players survival timings. If I do try my hand at servers, I'll likely want to store these values but if time forbids, I'll go with just a local scoreboard. Also, I've yet to try writing the code for the multiplayer mode in Ping Pong, though I've got a plan written out on how I intend to go about doing it. Currently, my main issue is with how the second player is going to take control of the "ai paddle" and not the "player paddle", and to address this I intend to introduce a counter that tracks the number of players. For example, on page load, if there are two or more players, and if multiplayer is selected, with these two conditions returning "true", it'll control the second paddle instead. So... hopefully it works?
+			</p>
+			<p>
+				Apart from this, I have to find the suitable music for my game, and introduce the necessary functions to enhance using experience, from things like adjusting the volume or selecting different music, to changing the difficulty of the game, all of which I don't foresee having too much trouble with. Oh, and I also have to clean up my main.js file, it's a huge mess at this point.
+			</p>
+		</div>
+	</body>
+</html>
